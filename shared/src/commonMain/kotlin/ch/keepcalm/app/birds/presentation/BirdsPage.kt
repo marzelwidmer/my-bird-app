@@ -1,4 +1,4 @@
-package ch.keepcalm.app.birds.screens
+package ch.keepcalm.app.birds.presentation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
