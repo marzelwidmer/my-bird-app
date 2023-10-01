@@ -13,7 +13,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 
-
 class BirdsViewModel : ViewModel() {
     private val _uiState = MutableStateFlow<BirdsUiState>(BirdsUiState())
 
@@ -27,6 +26,12 @@ class BirdsViewModel : ViewModel() {
 
     init {
         updateImages()
+    }
+
+    fun selectCategory(category: String) {
+        _uiState.update {
+            it.copy(selectedCategory = category)
+        }
     }
 
     override fun onCleared() {
