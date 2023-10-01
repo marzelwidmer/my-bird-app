@@ -9,10 +9,6 @@ import ch.keepcalm.app.birds.theme.BirdAppTheme
 @Composable
 fun App() {
     BirdAppTheme {
-//        val birdsRepository = BirdsRepository()
-//        val birdsViewModel = getViewModel(key = Unit, factory = viewModelFactory { BirdsViewModel(birdsRepository) })
-//        BirdsPage(birdsViewModel)
-
         val birdsViewModel: BirdsViewModel = getKoinInstance()
         BirdsPage(birdsViewModel)
     }
