@@ -1,4 +1,4 @@
-package ch.keepcalm.app.birds.presentation
+package ch.keepcalm.app.images.presentation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
@@ -20,12 +20,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ch.keepcalm.app.birds.domain.usecases.BirdsViewModel
-import ch.keepcalm.app.birds.infrastructure.repository.BirdImage
+import ch.keepcalm.app.images.domain.usecases.ImageViewModel
+import ch.keepcalm.app.images.infrastructure.repository.Image
 
 
 @Composable
-fun BirdsPage(viewModel: BirdsViewModel) {
+fun ImagePage(viewModel: ImageViewModel) {
 
     val uiState by viewModel.uiState.collectAsState()
 
@@ -64,8 +64,8 @@ fun BirdsPage(viewModel: BirdsViewModel) {
                 verticalArrangement = Arrangement.spacedBy(5.dp),
                 modifier = Modifier.fillMaxSize().padding(horizontal = 5.dp),
                 content = {
-                    items(uiState.selectedImages) { birdImage: BirdImage ->
-                        BirdImageCell(birdImage)
+                    items(uiState.selectedImages) { image: Image ->
+                        ImageCell(image)
                     }
                 }
             )

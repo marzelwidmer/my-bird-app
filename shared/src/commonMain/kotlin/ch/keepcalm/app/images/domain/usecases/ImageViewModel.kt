@@ -1,7 +1,7 @@
-package ch.keepcalm.app.birds.domain.usecases
+package ch.keepcalm.app.images.domain.usecases
 
-import ch.keepcalm.app.birds.domain.BirdsRepository
-import ch.keepcalm.app.birds.domain.entities.BirdsUiState
+import ch.keepcalm.app.images.domain.ImageRepository
+import ch.keepcalm.app.images.domain.entities.ImageUiState
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -9,8 +9,8 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 
-class BirdsViewModel(private val birdsRepository: BirdsRepository) : ViewModel(), KoinComponent {
-    private val _uiState = MutableStateFlow(BirdsUiState())
+class ImageViewModel(private val imageRepository: ImageRepository) : ViewModel(), KoinComponent {
+    private val _uiState = MutableStateFlow(ImageUiState())
 
     val uiState = _uiState.asStateFlow()
 
@@ -25,12 +25,12 @@ class BirdsViewModel(private val birdsRepository: BirdsRepository) : ViewModel()
     }
 
     override fun onCleared() {
-        birdsRepository.close()
+        imageRepository.close()
     }
 
     private fun updateImages() {
         viewModelScope.launch {
-            val images = birdsRepository.getImages()
+            val images = imageRepository.getImages()
             _uiState.update { birdsUiState ->
                 birdsUiState.copy(images = images)
             }

@@ -1,4 +1,4 @@
-package ch.keepcalm.app.birds.infrastructure.di
+package ch.keepcalm.app.images.infrastructure.di
 
 import org.koin.core.context.startKoin
 

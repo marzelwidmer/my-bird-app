@@ -1,9 +1,9 @@
-package ch.keepcalm.app.birds.infrastructure.repository
+package ch.keepcalm.app.images.infrastructure.repository
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class BirdImage(
+data class Image(
     val author: String,
     val category: String,
     val path: String

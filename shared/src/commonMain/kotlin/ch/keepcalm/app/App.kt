@@ -1,16 +1,16 @@
 package ch.keepcalm.app
 
 import androidx.compose.runtime.Composable
-import ch.keepcalm.app.birds.infrastructure.di.getKoinInstance
-import ch.keepcalm.app.birds.domain.usecases.BirdsViewModel
-import ch.keepcalm.app.birds.presentation.BirdsPage
-import ch.keepcalm.app.theme.BirdAppTheme
+import ch.keepcalm.app.images.infrastructure.di.getKoinInstance
+import ch.keepcalm.app.images.domain.usecases.ImageViewModel
+import ch.keepcalm.app.images.presentation.ImagePage
+import ch.keepcalm.app.theme.AppTheme
 
 @Composable
 fun App() {
-    BirdAppTheme {
-        val birdsViewModel: BirdsViewModel = getKoinInstance()
-        BirdsPage(birdsViewModel)
+    AppTheme {
+        val imageViewModel: ImageViewModel = getKoinInstance()
+        ImagePage(imageViewModel)
     }
 }
 
