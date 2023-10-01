@@ -1,4 +1,4 @@
-package ch.keepcalm.app.birds.di
+package ch.keepcalm.app.birds.infrastructure.di
 
 import org.koin.core.context.startKoin
 
@@ -11,7 +11,7 @@ import shared
 @main
 struct iOSApp: App {
 	init() {
-        AppModuleKt.doInitKoin()
+       InitKoinKt.doInitKoin()
     }
 	var body: some Scene {
 		WindowGroup {

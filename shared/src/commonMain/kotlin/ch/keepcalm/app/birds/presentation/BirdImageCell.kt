@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import ch.keepcalm.app.birds.data.BirdImage
+import ch.keepcalm.app.birds.infrastructure.repository.BirdImage
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 

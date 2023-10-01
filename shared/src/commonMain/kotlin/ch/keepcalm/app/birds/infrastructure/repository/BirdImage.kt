@@ -1,4 +1,4 @@
-package ch.keepcalm.app.birds.data
+package ch.keepcalm.app.birds.infrastructure.repository
 
 import kotlinx.serialization.Serializable
 

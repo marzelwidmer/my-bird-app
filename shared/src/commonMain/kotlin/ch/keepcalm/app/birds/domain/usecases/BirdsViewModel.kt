@@ -1,6 +1,7 @@
-package ch.keepcalm.app.birds.presentation
+package ch.keepcalm.app.birds.domain.usecases
 
-import ch.keepcalm.app.birds.repository.BirdsRepository
+import ch.keepcalm.app.birds.domain.BirdsRepository
+import ch.keepcalm.app.birds.domain.entities.BirdsUiState
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,4 +1,4 @@
-package ch.keepcalm.app.birds.di
+package ch.keepcalm.app.birds.infrastructure.di
 
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject

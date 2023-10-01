@@ -20,11 +20,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ch.keepcalm.app.birds.data.BirdImage
+import ch.keepcalm.app.birds.domain.usecases.BirdsViewModel
+import ch.keepcalm.app.birds.infrastructure.repository.BirdImage
 
 
 @Composable
 fun BirdsPage(viewModel: BirdsViewModel) {
+
     val uiState by viewModel.uiState.collectAsState()
 
     Column(

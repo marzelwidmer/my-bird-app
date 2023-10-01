@@ -1,4 +1,4 @@
-package ch.keepcalm.app.birds.theme
+package ch.keepcalm.app.theme
 
 import androidx.compose.foundation.shape.AbsoluteCutCornerShape
 import androidx.compose.material.MaterialTheme

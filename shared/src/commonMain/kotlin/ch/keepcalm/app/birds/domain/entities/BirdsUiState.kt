@@ -1,6 +1,6 @@
-package ch.keepcalm.app.birds.presentation
+package ch.keepcalm.app.birds.domain.entities
 
-import ch.keepcalm.app.birds.data.BirdImage
+import ch.keepcalm.app.birds.infrastructure.repository.BirdImage
 
 data class BirdsUiState(
     val images: List<BirdImage> = emptyList(),

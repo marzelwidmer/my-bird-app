@@ -1,10 +1,10 @@
 package ch.keepcalm.app
 
 import androidx.compose.runtime.Composable
-import ch.keepcalm.app.birds.di.getKoinInstance
+import ch.keepcalm.app.birds.infrastructure.di.getKoinInstance
+import ch.keepcalm.app.birds.domain.usecases.BirdsViewModel
 import ch.keepcalm.app.birds.presentation.BirdsPage
-import ch.keepcalm.app.birds.presentation.BirdsViewModel
-import ch.keepcalm.app.birds.theme.BirdAppTheme
+import ch.keepcalm.app.theme.BirdAppTheme
 
 @Composable
 fun App() {

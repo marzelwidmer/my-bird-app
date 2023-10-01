@@ -3,7 +3,7 @@ package ch.keepcalm.app
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import ch.keepcalm.app.birds.di.initKoin
+import ch.keepcalm.app.birds.infrastructure.di.initKoin
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
