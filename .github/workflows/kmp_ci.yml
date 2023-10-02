@@ -2,9 +2,9 @@ name: KMP CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 17
-          distribution: 'temurin'  # Eclipse Temurin is a popular distribution of OpenJDK
+          distribution: "temurin" # Eclipse Temurin is a popular distribution of OpenJDK
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -33,13 +33,25 @@ jobs:
           echo "android.minSdk=24" >> local.properties
           ./gradlew :androidApp:build :androidApp:test
 
+  build-ios:
+    runs-on: macos-latest
 
-#      - name: Run Android Instrumentation Tests
-#        uses: reactivecircus/android-emulator-runner@v2
-#        with:
-#          api-level: 29
-#          target: google_apis
-#          emulator-options: "-no-boot-anim -no-window"
-#          emulator-boot-timeout: 600 # Increase this value as needed
-#          arch: x86
-#          script: ./gradlew connectedCheck
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: "temurin" # Eclipse Temurin is a popular distribution of OpenJDK
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build shared module and run tests
+        run: ./gradlew :shared:build :shared:test
+
+      - name: Build iosApp module and run tests
+        run: |
+          ./gradlew iosArm64Binaries iosSimulatorArm64Binaries iosX64Binaries
+          script: ./gradlew connectedCheck
