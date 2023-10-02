@@ -28,24 +28,24 @@ kotlin {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
                 // TODO: 30.09.2023
-                implementation("media.kamel:kamel-image:0.7.3")
-                implementation("io.ktor:ktor-client-core:2.3.4")
-                implementation("io.ktor:ktor-client-content-negotiation:2.3.4")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.4")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-                api("dev.icerock.moko:mvvm-core:0.16.1") // only ViewModel, EventsDispatcher, Dispatchers.UI
-                api("dev.icerock.moko:mvvm-compose:0.16.1") // api mvvm-core, getViewModel for Compose Multiplatfrom
-                implementation("io.insert-koin:koin-core:3.5.0")
+                 implementation(libs.kamel.image)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.ktor.serialization.kotlinx.json)
+                implementation(libs.kotlinx.serialization.json)
+                api(libs.mvvm.core) // only ViewModel, EventsDispatcher, Dispatchers.UI
+                api(libs.mvvm.compose) // api mvvm-core, getViewModel for Compose Multiplatfrom
+                implementation(libs.koin.core)
 
             }
         }
         val androidMain by getting {
             dependencies {
-                api("androidx.activity:activity-compose:1.7.2")
-                api("androidx.appcompat:appcompat:1.6.1")
-                api("androidx.core:core-ktx:1.12.0")
+                api(libs.activity.compose)
+                api(libs.appcompat)
+                api(libs.core.ktx)
                 // TODO: 30.09.2023
-                implementation("io.ktor:ktor-client-android:2.3.4")
+                implementation(libs.ktor.client.android)
             }
         }
         val iosX64Main by getting
@@ -58,7 +58,7 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
             // TODO: 30.09.2023
             dependencies {
-                implementation("io.ktor:ktor-client-darwin:2.3.4")
+                implementation(libs.ktor.client.darwin)
             }
         }
     }
