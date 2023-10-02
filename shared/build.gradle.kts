@@ -33,17 +33,17 @@ kotlin {
                 implementation(libs.ktor.client.content.negotiation)
                 implementation(libs.ktor.serialization.kotlinx.json)
                 implementation(libs.kotlinx.serialization.json)
-                api(libs.mvvm.core) // only ViewModel, EventsDispatcher, Dispatchers.UI
-                api(libs.mvvm.compose) // api mvvm-core, getViewModel for Compose Multiplatfrom
+                api(libs.mvvm.core)
+                api(libs.mvvm.compose)
                 implementation(libs.koin.core)
 
             }
         }
         val androidMain by getting {
             dependencies {
-                api(libs.activity.compose)
-                api(libs.appcompat)
-                api(libs.core.ktx)
+                api(libs.androidx.activity.compose)
+                api(libs.androidx.appcompat)
+                api(libs.androidx.core.ktx)
                 // TODO: 30.09.2023
                 implementation(libs.ktor.client.android)
             }
