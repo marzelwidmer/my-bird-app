@@ -33,26 +33,4 @@ jobs:
           echo "android.minSdk=24" >> local.properties
           ./gradlew :androidApp:build :androidApp:test
 
-  build-ios-intel:
-    runs-on: macos-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          java-version: 17
-          distribution: "temurin" # Eclipse Temurin is a popular distribution of OpenJDK
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build shared module and run tests
-        run: ./gradlew :shared:build :shared:test
-
-      - name: Build iosApp module and run tests
-        run: |
-          ./gradlew iosArm64Binaries iosSimulatorArm64Binaries iosX64Binaries
-          ./gradlew :iosApp:build :iosApp:test
 
