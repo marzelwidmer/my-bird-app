@@ -52,6 +52,6 @@ jobs:
         run: ./gradlew :shared:build :shared:test
 
       - name: Build iosApp module and run tests
-          run: |
-            ./gradlew iosArm64Binaries iosSimulatorArm64Binaries iosX64Binaries
-            ./gradlew :iosApp:build :iosApp:test
+        run: |
+          ./gradlew iosArm64Binaries iosSimulatorArm64Binaries iosX64Binaries
+          ./gradlew :iosApp:build :iosApp:test
